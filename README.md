@@ -3,7 +3,7 @@ Small computer vision project on RaspberryPi
 
 ## 💡 Idea 
 
-Making a real-time cat recognition system that identifies my cats ("devi" & "sati") using Raspberry Pi 4. When a cat is detected, it lights the corresponding LED and displays the first letter ("D"/"S") on an 8x8 LED matrix.  
+Making a real-time cat recognition system that identifies my cats ("devi" & "sati") using Raspberry Pi 4. When a cat is detected, it lights the corresponding LED    
 
 Tech Stack:  
 - Detection: SSD MobileNet V1 (COCO-trained, 15 FPS)
@@ -15,7 +15,6 @@ Tech Stack:
 | Pi Camera v2   | CSI connector                 |
 | LED Devi       | GPIO 17                       |
 | LED Sati       | GPIO 27                       |
-| 8x8 LED Matrix | SPI (MOSI:10, CE0:8, SCLK:11) |
 | SD Card        | 32GB+ Class 10                |
 
 🛠️ Software Setup
@@ -36,10 +35,12 @@ wget http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coc
 tar -xzf ssd_mobilenet_v1_coco_11_06_2017.tar.gz  
 wget https://raw.githubusercontent.com/opencv/opencv_extra/4.x/testdata/dnn/ssd_mobilenet_v1_coco.pbtxt  
 
-# Copy trained models  
-cp cats_resnet50_single.onnx .  
 ```
 ### Run:
+
+prepare data using ```data_prep.ipynb```  
+prepare model using ```cats_recognition.ipynb```  
+
 ```  
 cd ~/Desktop
 source cat_id_env/bin/activate  
